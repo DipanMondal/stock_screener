@@ -1,0 +1,22 @@
+
+
+.mode-toggle {
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	width: 50px;
+	height: 50px;
+	border: none;
+	border-radius: 50%;
+	background-color: transparent;
+	cursor: pointer;
+	outline: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.mode-toggle img {
+	width: 100%;
+	height: auto;
+}

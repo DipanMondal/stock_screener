@@ -1,0 +1,123 @@
+<html>
+	<head>
+		<title>Credex</title>
+		<link rel="stylesheet" href="home_style.css">
+		<link rel="stylesheet" href="top_bar.css">
+		<link rel="stylesheet" href="nav_bar.css">
+		<link rel="stylesheet" href="title_bar.css">
+		<link rel="stylesheet" href="light_dark.css">
+		<link rel="stylesheet" href="footer.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script>
+			function myFunction() {
+			  var x = document.getElementById("myTopnav");
+			  if (x.className === "topnav") {
+				x.className += " responsive";
+			  } else {
+				x.className = "topnav";
+			  }
+			}
+		</script>
+	</head>
+	<body>
+		
+		<!-- Top Bar-->
+		<div class="top_bar">
+			<div class="name" id="name">
+				<div><img src="logo.png" class="logo"></div>
+				<div>TRADE VIEW</div>
+			</div>
+			
+			<div class="topnav" id="myTopnav">
+				<a href="#home" class="active">Home</a>
+				<a href="#news">About</a>
+				<a href="#contact">Watchlist</a>
+				<a href="#about">Portfolio</a>
+				<a href="#about">Feed</a>
+				<a href="https://www.google.com">Login/Signup</a>
+				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+					<i class="fa fa-bars"></i>
+				</a>
+			</div>
+		</div>
+		
+		<!-- Top Indexes -->
+		<div id="indexes" class="galary">
+			<div id="AAPL-container" class="grid">
+				<div class="stock_name" id="AAPL-container-name">APPLE</div>
+				<div class="stock_price" id="AAPL-container-price">Market Close</div>
+			</div>
+			<div id="GOOGL-container" class="grid">
+				<div class="stock_name" id="GOOGL-container-name">GOOGLE</div>
+				<div class="stock_price" id="GOOGL-container-price">Market Close</div>
+			</div>
+			<div id="MSFT-container" class="grid">
+				<div class="stock_name" id="MSFT-container-name">MSFT</div>
+				<div class="stock_price" id="MSFT-container-price">Market Close</div>
+			</div>
+			<div id="AMZN-container" class="grid">
+				<div class="stock_name" id="AMZN-container-name">AMAZON</div>
+				<div class="stock_price" id="AMZN-container-price">Market Close</div>
+			</div>
+			<div id="TSLA-container" class="grid">
+				<div class="stock_name" id="TSLA-container-name">TESLA</div>
+				<div class="stock_price" id="TSLA-container-price">Market Close</div>
+			</div>
+			<div id="NVDA-container" class="grid">
+				<div class="stock_name" id="NVDA-container-name">NVDIA</div>
+				<div class="stock_price" id="NVDA-container-price">Market Close</div>
+			</div>
+		</div>
+		
+		
+		<!-- Contact Section -->
+		<div class="footer" id="footer" roll="contact">
+			<div class="footer-item-left">
+				<div class="item-box">
+					<header>Trade View</header><br>
+					<content>This is a open platform screener</content><br>
+					<content>Find and manage </content><br>
+					<content>your international stocks here</content>
+				</div>
+				<div class="item-box">
+					<header>Subscription</header><br>
+					<content>Get our subscription</content><br>
+					<content>for more features</content><br>
+					<content>
+						<a href="#subscribe" class="Subscription-button">subscribe</a>
+					</content>
+				</div>
+			</div>
+			<div class="footer-item-right">
+				<div class="item-box">
+					<header>Contact</header><br>
+					<content><i class="fa fa-envelope"></i> email:</content><br>
+					<content> idipan2003@gmail.com</content><br>
+					<content> sabarna.saha1308@gmail.com</content><br>
+					<content><i class="fa fa-phone"></i> phone:</content><br>
+					<content> +91 8250821406</content><br>
+					<content> +91 6289735339</content><br>
+				</div>
+				<div class="item-box">
+					<header>Address</header><br>
+					<content>H-108,Chingrighata,</content><br>
+					<content>Kolkata-700098</content><br><br>
+					<content>H-696,Jadavpur,</content><br>
+					<content>Kolkata-700108</content>
+				</div>
+			</div>
+		</div>
+		
+		
+		<!-- Theme change button -->
+		<button id="mode-toggle" class="mode-toggle" onclick="toggle_theme()">
+			<img id="mode-icon" src="sunny-icon.png">
+		</button>
+		
+		<script src="apple_data.js"></script>
+		<script src="light_dark.js"></script>
+		
+		
+	</body>
+</html>

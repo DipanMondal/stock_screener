@@ -1,0 +1,55 @@
+
+body {
+	background-color: #121212;
+	transition:all 0.4s ease-in-out;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.galary{
+	display: grid;
+	max-width:1200px;
+	margin:10px auto;
+	padding:3px;
+	gap: 1px;
+	grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+}
+
+.grid{
+	width: 200px;
+	height:100px;
+	border: 0px solid black;
+	border-radius:10px;
+	margin: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.grid > * {
+	flex-grow: 1;
+}
+
+.stock_name{
+	background:none;
+	color:white;
+	height:50px;
+	padding:6px;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	text-align:center;
+	font-size:23px;
+}
+
+.stock_price{
+	background:none;
+	color:green;
+	height:50px;
+	padding:6px;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+	text-align:center;
+	font-size:19px;
+}
