@@ -1,0 +1,190 @@
+{% load static %}
+<html>
+	<head>
+		<title>Trade View</title>
+		<link rel="stylesheet" href="{% static 'home_style.css' %}">
+		<link rel="stylesheet" href="{% static 'top_bar.css' %}">
+		<link rel="stylesheet" href="{% static 'nav_bar.css' %}">
+		<link rel="stylesheet" href="{% static 'title_bar.css' %}">
+		<link rel="stylesheet" href="{% static 'light_dark.css' %}">
+		<link rel="stylesheet" href="{% static 'footer.css' %}">
+		<link rel="stylesheet" href="{% static 'news_galary.css' %}">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script>
+			function myFunction() {
+			  var x = document.getElementById("myTopnav");
+			  if (x.className === "topnav") {
+				x.className += " responsive";
+			  } else {
+				x.className = "topnav";
+			  }
+			}
+		</script>
+	</head>
+	<body>
+		
+		<!-- Top Bar-->
+		<div class="top_bar">
+			<div class="name" id="name">
+				<div><img src="{% static 'logo.png' %}" class="logo"></div>
+				<div>TRADE VIEW</div>
+			</div>
+			
+			<div class="topnav" id="myTopnav">
+				<a href="#home" class="active">Home</a>
+				<a href="#news">About</a>
+				<a href="#contact">Watchlist</a>
+				<a href="#about">Portfolio</a>
+				<a href="#about">Feed</a>
+				<a href="https://www.google.com">Login/Signup</a>
+				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+					<i class="fa fa-bars"></i>
+				</a>
+			</div>
+		</div>
+		
+		<!-- Top Indexes -->
+		<div id="indexes" class="galary">
+			<div id="AAPL-container" class="grid">
+				<div class="stock_name" id="AAPL-container-name">APPLE</div>
+				<div class="stock_price" id="AAPL-container-price"> -- </div>
+			</div>
+			<div id="GOOGL-container" class="grid">
+				<div class="stock_name" id="GOOGL-container-name">GOOGLE</div>
+				<div class="stock_price" id="GOOGL-container-price"> -- </div>
+			</div>
+			<div id="MSFT-container" class="grid">
+				<div class="stock_name" id="MSFT-container-name">MSFT</div>
+				<div class="stock_price" id="MSFT-container-price"> -- </div>
+			</div>
+			<div id="AMZN-container" class="grid">
+				<div class="stock_name" id="AMZN-container-name">AMAZON</div>
+				<div class="stock_price" id="AMZN-container-price"> -- </div>
+			</div>
+			<div id="TSLA-container" class="grid">
+				<div class="stock_name" id="TSLA-container-name">TESLA</div>
+				<div class="stock_price" id="TSLA-container-price"> -- </div>
+			</div>
+			<div id="NVDA-container" class="grid">
+				<div class="stock_name" id="NVDA-container-name">NVDIA</div>
+				<div class="stock_price" id="NVDA-container-price"> -- </div>
+			</div>
+		</div>
+		
+		
+		<!-- News Feeds -->
+		<div id="news-feeds" class="news-gallery">
+			<!-- News feeds will be dynamically inserted here -->
+		</div>
+
+		
+		
+		<!-- Contact Section -->
+		<div class="footer" id="footer" roll="contact">
+			<div class="footer-item-left">
+				<div class="item-box">
+					<header>Trade View</header><br>
+					<content>This is a open platform screener</content><br>
+					<content>Find and manage </content><br>
+					<content>your international stocks here</content>
+				</div>
+				<div class="item-box">
+					<header>Subscription</header><br>
+					<content>Get our subscription</content><br>
+					<content>for more features</content><br>
+					<content>
+						<a href="#subscribe" class="Subscription-button">subscribe</a>
+					</content>
+				</div>
+			</div>
+			<div class="footer-item-right">
+				<div class="item-box">
+					<header>Contact</header><br>
+					<content><i class="fa fa-envelope"></i> email:</content><br>
+					<content> idipan2003@gmail.com</content><br>
+					<content> sabarna.saha1308@gmail.com</content><br>
+					<content><i class="fa fa-phone"></i> phone:</content><br>
+					<content> +91 8250821406</content><br>
+					<content> +91 6289735339</content><br>
+				</div>
+				<div class="item-box">
+					<header>Address</header><br>
+					<content>H-108,Chingrighata,</content><br>
+					<content>Kolkata-700098</content><br><br>
+					<content>H-696,Jadavpur,</content><br>
+					<content>Kolkata-700108</content>
+				</div>
+			</div>
+		</div>
+		
+		
+		<!-- Theme change button -->
+		<button id="mode-toggle" class="mode-toggle" onclick="toggle_theme()">
+			<img id="mode-icon" src="{% static 'sunny-icon.png' %}">
+		</button>
+		
+		
+		<!-- Extra Scripts -->
+		<script src="{% static 'news_feed.js' %}"></script>
+		<script src="{% static 'stock_data.js' %}"></script>
+		<script>
+			var flag = true;
+			document.querySelectorAll('.subscription-button').forEach(button => {
+				button.classList.add('dark-mode');
+				button.classList.remove('light-mode');
+			});
+
+			function toggle_theme() {
+				const topnavLinks = document.querySelectorAll('.topnav a');
+				const stockNameLinks = document.querySelectorAll('.stock_name');
+				const footers = document.querySelectorAll('.footer');
+				const subscriptionButtons = document.querySelectorAll('.subscription-button');
+
+				const changeTopnavLinkColor = (color) => {
+					topnavLinks.forEach(link => {
+						link.style.color = color;
+					});
+				};
+
+				const changestockNameColor = (color) => {
+					stockNameLinks.forEach(link => {
+						link.style.color = color;
+					});
+				};
+
+				if (flag) { // currently in dark mode
+					document.body.style.backgroundColor = "white";
+					document.getElementById("name").style.color = "black";
+					document.getElementById('mode-icon').src = "{% static 'night-icon.png' %}";
+					changeTopnavLinkColor('black');
+					changestockNameColor('black');
+					footers.forEach(link => {
+						link.style.color = 'black';
+					});
+					subscriptionButtons.forEach(button => {
+						button.classList.add('light-mode');
+						button.classList.remove('dark-mode');
+					});
+
+					flag = false;
+				} else { // currently in light mode
+					document.body.style.backgroundColor = "black";
+					document.getElementById("name").style.color = "white";
+					document.getElementById('mode-icon').src = "{% static 'sunny-icon.png' %}";
+					changeTopnavLinkColor('white');
+					changestockNameColor('white');
+					footers.forEach(link => {
+						link.style.color = 'white';
+					});
+					subscriptionButtons.forEach(button => {
+						button.classList.add('dark-mode');
+						button.classList.remove('light-mode');
+					});
+
+					flag = true;
+				}
+			}
+		</script>		
+	</body>
+</html>
