@@ -1,4 +1,4 @@
-const socket = new WebSocket('wss://ws.finnhub.io?token=cqhl0n1r01qm46d7l3h0cqhl0n1r01qm46d7l3hg');
+const socket = new WebSocket('wss://ws.finnhub.io?token=cqj8ltpr01qnjotf96e0cqj8ltpr01qnjotf96eg');
 
 // Connection opened
 socket.addEventListener('open', function (event) {
